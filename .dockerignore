@@ -1,0 +1,26 @@
+# Segurança
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log
+
+# Git
+.git/
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore

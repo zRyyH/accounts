@@ -1,0 +1,5 @@
+services:
+  valorant-cron:
+    build: .
+    container_name: valorant-cron
+    restart: unless-stopped
