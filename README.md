@@ -31,8 +31,8 @@ cp .env.example .env
 | Variável | Descrição | Padrão |
 |----------|-----------|--------|
 | `PB_URL` | URL do PocketBase | - |
-| `PB_ADMIN_EMAIL` | Email admin PocketBase | - |
-| `PB_ADMIN_PASSWORD` | Senha admin PocketBase | - |
+| `PB_EMAIL` | Email admin PocketBase | - |
+| `PB_PASSWORD` | Senha admin PocketBase | - |
 | `API_TOKEN` | Token API Henrik Dev | - |
 | `API_REGION` | Região da API | `na` |
 | `API_TIMEOUT` | Timeout das requisições (segundos) | `30` |

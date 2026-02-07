@@ -19,7 +19,7 @@ def _get_env(key, default=None):
 
 def _validate_config():
     required_vars = [
-        "PB_URL", "PB_ADMIN_EMAIL", "PB_ADMIN_PASSWORD",
+        "PB_URL", "PB_EMAIL", "PB_PASSWORD",
         "API_TOKEN", "COLLECTION_NAME"
     ]
 

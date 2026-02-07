@@ -20,8 +20,8 @@ def _get_pb():
     if _pb is None:
         try:
             url = _get_env("PB_URL")
-            email = _get_env("PB_ADMIN_EMAIL")
-            password = _get_env("PB_ADMIN_PASSWORD")
+            email = _get_env("PB_EMAIL")
+            password = _get_env("PB_PASSWORD")
 
             _pb = PocketBase(url)
             _pb.admins.auth_with_password(email, password)
@@ -35,9 +35,9 @@ def _get_pb():
 def _ensure_authenticated():
     try:
         pb = _get_pb()
-        if not pb.auth_store.is_valid:
-            email = _get_env("PB_ADMIN_EMAIL")
-            password = _get_env("PB_ADMIN_PASSWORD")
+        if not pb.auth_store.token:
+            email = _get_env("PB_EMAIL")
+            password = _get_env("PB_PASSWORD")
             pb.admins.auth_with_password(email, password)
             logger.info("Reconectado ao PocketBase")
     except Exception as e:
