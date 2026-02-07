@@ -43,7 +43,9 @@ def _api_request(url):
             return None
 
         except requests.Timeout:
-            logger.warning(f"Timeout na requisição (tentativa {attempt + 1}/{API_MAX_RETRIES})")
+            logger.warning(
+                f"Timeout na requisição (tentativa {attempt + 1}/{API_MAX_RETRIES})"
+            )
             if attempt < API_MAX_RETRIES - 1:
                 time.sleep(API_RETRY_DELAY)
         except requests.RequestException as e:
@@ -82,7 +84,9 @@ def check_account(name, tag):
         mmr_data = mmr["data"]["current_data"]
 
         return {
-            "last_activity": transform_date(match_data["metadata"]["game_start_patched"]),
+            "last_activity": transform_date(
+                match_data["metadata"]["game_start_patched"]
+            ),
             "last_rank": mmr_data["currenttierpatched"],
         }
 

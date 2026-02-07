@@ -50,7 +50,9 @@ def get_accounts(collection):
         _ensure_authenticated()
         pb = _get_pb()
         records = pb.collection(collection).get_full_list(batch=1000)
-        valid_records = [r for r in records if r.__dict__.get("name") and r.__dict__.get("tag")]
+        valid_records = [
+            r for r in records if r.__dict__.get("name") and r.__dict__.get("tag")
+        ]
         return valid_records
     except Exception as e:
         logger.error(f"Erro ao buscar contas: {e}")
