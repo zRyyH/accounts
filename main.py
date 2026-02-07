@@ -19,8 +19,11 @@ def _get_env(key, default=None):
 
 def _validate_config():
     required_vars = [
-        "PB_URL", "PB_EMAIL", "PB_PASSWORD",
-        "API_TOKEN", "COLLECTION_NAME"
+        "PB_URL",
+        "PB_EMAIL",
+        "PB_PASSWORD",
+        "API_TOKEN",
+        "COLLECTION_NAME",
     ]
 
     for var in required_vars:
@@ -56,7 +59,9 @@ def _process_account(account, collection):
         result = update_account(account_id, data, collection)
 
         if result:
-            logger.info(f"{name}#{tag} → ATIVO | Rank: {data['last_rank']} | Última atividade: {data['last_activity']}")
+            logger.info(
+                f"{name}#{tag} → ATIVO | Rank: {data['last_rank']} | Última atividade: {data['last_activity']}"
+            )
 
     except Exception as e:
         logger.error(f"Erro ao processar conta: {e}")
